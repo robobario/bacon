@@ -5,6 +5,8 @@ import java.nio.file.Path;
 import java.util.List;
 
 import org.jboss.bacon.experimental.impl.sbom.DaAvailabilityResolver;
+import org.jboss.bacon.experimental.impl.sbom.GavMapper;
+import org.jboss.bacon.experimental.impl.sbom.SbomAnalysisConfig;
 import org.jboss.bacon.experimental.impl.sbom.SbomAnalyzer;
 import org.jboss.bacon.experimental.impl.sbom.SbomModule;
 import org.jboss.pnc.bacon.common.ObjectHelper;
@@ -29,6 +31,11 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
             description = "Skip the Dependency Analyzer lookup and only list the modules")
     protected boolean skipDa;
 
+    @CommandLine.Option(
+            names = { "--config" },
+            description = "analyze-sbom configuration file (e.g. GAV mappings for syft mis-detected coordinates)")
+    protected Path config;
+
     @Override
     public void run() {
         if (sbom == null || !Files.isRegularFile(sbom)) {
@@ -36,6 +43,12 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
         }
         List<SbomModule> modules = new SbomAnalyzer().analyze(sbom);
         log.info("Found {} maven modules in {}", modules.size(), sbom);
+        if (config != null) {
+            if (!Files.isRegularFile(config)) {
+                throw new FatalException("Config file does not exist: " + config);
+            }
+            new GavMapper(SbomAnalysisConfig.load(config)).apply(modules);
+        }
         if (!skipDa) {
             new DaAvailabilityResolver().resolve(modules);
         }

@@ -1,0 +1,15 @@
+gavMappings:
+  - from:
+      groupId: com.sun
+      artifactId: activation
+    to:
+      groupId: javax.activation
+      artifactId: activation
+  - from:
+      groupId: org.example
+      artifactId: legacy
+      version: "1.0"
+    to:
+      groupId: org.example
+      artifactId: renamed
+      version: "2.0"
