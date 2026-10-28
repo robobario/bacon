@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.jboss.bacon.experimental.impl.sbom.DaAvailabilityResolver;
 import org.jboss.bacon.experimental.impl.sbom.GavMapper;
+import org.jboss.bacon.experimental.impl.sbom.PathFilter;
 import org.jboss.bacon.experimental.impl.sbom.SbomAnalysisConfig;
 import org.jboss.bacon.experimental.impl.sbom.SbomAnalyzer;
 import org.jboss.bacon.experimental.impl.sbom.SbomModule;
@@ -47,7 +48,10 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
             if (!Files.isRegularFile(config)) {
                 throw new FatalException("Config file does not exist: " + config);
             }
-            new GavMapper(SbomAnalysisConfig.load(config)).apply(modules);
+            SbomAnalysisConfig analysisConfig = SbomAnalysisConfig.load(config);
+            modules = new PathFilter(analysisConfig.getPathFilters()).filter(modules);
+            new GavMapper(analysisConfig).apply(modules);
+            log.info("{} modules remain after applying config", modules.size());
         }
         if (!skipDa) {
             new DaAvailabilityResolver().resolve(modules);

@@ -1,3 +1,7 @@
+pathFilters:
+  exclude:
+    - "**/cruise-control/**"
+
 gavMappings:
   - from:
       groupId: com.sun

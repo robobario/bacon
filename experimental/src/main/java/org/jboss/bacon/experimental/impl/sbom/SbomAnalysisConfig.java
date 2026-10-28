@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 public class SbomAnalysisConfig {
 
     private List<GavMapping> gavMappings = new ArrayList<>();
+    private PathFilters pathFilters = new PathFilters();
 
     public static SbomAnalysisConfig load(Path configFile) {
         Yaml yaml = new Yaml();
@@ -42,5 +43,12 @@ public class SbomAnalysisConfig {
         private String groupId;
         private String artifactId;
         private String version;
+    }
+
+    @Data
+    @NoArgsConstructor
+    public static class PathFilters {
+        private List<String> include = new ArrayList<>();
+        private List<String> exclude = new ArrayList<>();
     }
 }
