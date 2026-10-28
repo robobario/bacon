@@ -1,5 +1,6 @@
 package org.jboss.bacon.experimental.cli;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -37,6 +38,11 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
             description = "analyze-sbom configuration file (e.g. GAV mappings for syft mis-detected coordinates)")
     protected Path config;
 
+    @CommandLine.Option(
+            names = { "--output", "-O" },
+            description = "Write the result to this file instead of stdout")
+    protected Path output;
+
     @Override
     public void run() {
         if (sbom == null || !Files.isRegularFile(sbom)) {
@@ -56,10 +62,21 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
         if (!skipDa) {
             new DaAvailabilityResolver().resolve(modules);
         }
+        write(modules);
+    }
+
+    private void write(List<SbomModule> modules) {
         try {
-            ObjectHelper.print(getJsonOutput(), modules);
+            if (output == null) {
+                ObjectHelper.print(getJsonOutput(), modules);
+            } else {
+                Files.writeString(output, ObjectHelper.serialize(getJsonOutput(), modules));
+                log.info("Wrote analysis of {} modules to {}", modules.size(), output);
+            }
         } catch (JsonProcessingException e) {
             throw new FatalException("Unable to serialize analysis result", e);
+        } catch (IOException e) {
+            throw new FatalException("Unable to write result to " + output, e);
         }
     }
 }
