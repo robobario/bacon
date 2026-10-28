@@ -1,0 +1,328 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "quay.io/strimzi/kafka",
+  "documentNamespace": "https://anchore.com/syft/image/quay.io/strimzi/kafka-1c23391e-c9b3-4ca6-bced-a1030da1043e",
+  "creationInfo": {
+    "licenseListVersion": "3.25",
+    "creators": [
+      "Organization: Anchore, Inc",
+      "Tool: syft-1.20.0"
+    ],
+    "created": "2026-10-12T14:59:23Z"
+  },
+  "packages": [
+    {
+      "name": "HdrHistogram",
+      "SPDXID": "SPDXRef-Package-java-archive-HdrHistogram-d1b5041c926f477e",
+      "versionInfo": "2.2.2",
+      "supplier": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "7959933ebcc0f05b2eaa5af0a0c8689fa257b15c"
+        }
+      ],
+      "sourceInfo": "acquired package info from installed java archive: /opt/cruise-control/libs/HdrHistogram-2.2.2.jar",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LicenseRef-d509473237fa971bc0a8ad7708f3cd561fcf86ef2e611701ed8eec621fd6575e",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:org.hdrhistogram.HdrHistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:org.hdrhistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:HdrHistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:hdrhistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:maven/org.hdrhistogram/HdrHistogram@2.2.2"
+        }
+      ]
+    },
+    {
+      "name": "HdrHistogram",
+      "SPDXID": "SPDXRef-Package-java-archive-HdrHistogram-e77c83b7cff378df",
+      "versionInfo": "2.2.2",
+      "supplier": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "7959933ebcc0f05b2eaa5af0a0c8689fa257b15c"
+        }
+      ],
+      "sourceInfo": "acquired package info from installed java archive: /opt/kafka/libs/HdrHistogram-2.2.2.jar",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LicenseRef-d509473237fa971bc0a8ad7708f3cd561fcf86ef2e611701ed8eec621fd6575e",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:org.hdrhistogram.HdrHistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:org.hdrhistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:HdrHistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:hdrhistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:maven/org.hdrhistogram/HdrHistogram@2.2.2"
+        }
+      ]
+    },
+    {
+      "name": "accessors-smart",
+      "SPDXID": "SPDXRef-Package-java-archive-accessors-smart-21508b43a0de1568",
+      "versionInfo": "2.5.2",
+      "supplier": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "ce16fd235cfee48e67eda33e684423bba09f7d07"
+        }
+      ],
+      "sourceInfo": "acquired package info from installed java archive: /opt/cruise-control/libs/accessors-smart-2.5.2.jar",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LicenseRef-http---www.apache.org-licenses-LICENSE-2.0.txt",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev.accessors-smart:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev.accessors-smart:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors-smart:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors-smart:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors_smart:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors_smart:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:minidev:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:minidev:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:maven/net.minidev/accessors-smart@2.5.2"
+        }
+      ]
+    },
+    {
+      "name": "accessors-smart",
+      "SPDXID": "SPDXRef-Package-java-archive-accessors-smart-04662948c0594d19",
+      "versionInfo": "2.5.2",
+      "supplier": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "ce16fd235cfee48e67eda33e684423bba09f7d07"
+        }
+      ],
+      "sourceInfo": "acquired package info from installed java archive: /opt/kafka/libs/accessors-smart-2.5.2.jar",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LicenseRef-http---www.apache.org-licenses-LICENSE-2.0.txt",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev.accessors-smart:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev.accessors-smart:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors-smart:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors-smart:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors_smart:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors_smart:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:net.minidev:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:accessors:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:minidev:accessors-smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:minidev:accessors_smart:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:maven/net.minidev/accessors-smart@2.5.2"
+        }
+      ]
+    },
+    {
+      "name": "activation",
+      "SPDXID": "SPDXRef-Package-java-archive-activation-c8b5ec9092d45651",
+      "versionInfo": "1.1.1",
+      "supplier": "Organization: Sun Microsystems, Inc.",
+      "originator": "Organization: Sun Microsystems, Inc.",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "485de3a253e23f645037828c07f1d7f1af40763a"
+        }
+      ],
+      "sourceInfo": "acquired package info from installed java archive: /opt/kafka/libs/activation-1.1.1.jar",
+      "licenseConcluded": "CDDL-1.0 AND GPL-2.0-only",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:sun-microsystems\\,-inc-:activation:1.1.1:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:sun_microsystems\\,_inc_:activation:1.1.1:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:activation:activation:1.1.1:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:com.sun:activation:1.1.1:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:sun:activation:1.1.1:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:maven/com.sun/activation@1.1.1"
+        }
+      ]
+    }
+  ]
+}

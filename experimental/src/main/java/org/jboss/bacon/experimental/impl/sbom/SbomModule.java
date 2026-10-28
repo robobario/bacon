@@ -12,4 +12,10 @@ public class SbomModule {
     private String artifactId;
     private String version;
     private String path;
+    private String latestPersistentVersion;
+    private String latestTemporaryVersion;
+
+    public SbomModule(String groupId, String artifactId, String version, String path) {
+        this(groupId, artifactId, version, path, null, null);
+    }
 }

@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import org.jboss.bacon.experimental.impl.sbom.DaAvailabilityResolver;
 import org.jboss.bacon.experimental.impl.sbom.SbomAnalyzer;
 import org.jboss.bacon.experimental.impl.sbom.SbomModule;
 import org.jboss.pnc.bacon.common.ObjectHelper;
@@ -23,6 +24,11 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
     @CommandLine.Parameters(description = "SPDX SBOM JSON file to analyze")
     protected Path sbom;
 
+    @CommandLine.Option(
+            names = { "--skip-da" },
+            description = "Skip the Dependency Analyzer lookup and only list the modules")
+    protected boolean skipDa;
+
     @Override
     public void run() {
         if (sbom == null || !Files.isRegularFile(sbom)) {
@@ -30,6 +36,9 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
         }
         List<SbomModule> modules = new SbomAnalyzer().analyze(sbom);
         log.info("Found {} maven modules in {}", modules.size(), sbom);
+        if (!skipDa) {
+            new DaAvailabilityResolver().resolve(modules);
+        }
         try {
             ObjectHelper.print(getJsonOutput(), modules);
         } catch (JsonProcessingException e) {
