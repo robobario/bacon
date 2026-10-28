@@ -17,13 +17,15 @@
  */
 package org.jboss.bacon.experimental;
 
+import org.jboss.bacon.experimental.cli.AnalyzeSbomCommand;
+
 import picocli.CommandLine.Command;
 
 @Command(
         name = "experimental",
         hidden = true,
         description = "EXPERIMENTAL COMMANDS: commands that are not fully supported, in development and/or without backward compatibility guarantee.",
-        subcommands = { DependencyGenerator.class })
+        subcommands = { DependencyGenerator.class, AnalyzeSbomCommand.class })
 public class Experimental {
 
 }

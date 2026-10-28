@@ -1,0 +1,52 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "name": "sample",
+  "packages": [
+    {
+      "name": "HdrHistogram",
+      "versionInfo": "2.2.2",
+      "sourceInfo": "acquired package info from installed java archive: /opt/cruise-control/libs/HdrHistogram-2.2.2.jar",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:hdrhistogram:HdrHistogram:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:maven/org.hdrhistogram/HdrHistogram@2.2.2"
+        }
+      ]
+    },
+    {
+      "name": "kafka-clients",
+      "versionInfo": "4.2.1",
+      "sourceInfo": "acquired package info from installed java archive: /opt/kafka/libs/kafka-clients-4.2.1.jar",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:maven/org.apache.kafka/kafka-clients@4.2.1?type=jar"
+        }
+      ]
+    },
+    {
+      "name": "some-rpm",
+      "versionInfo": "1.0",
+      "sourceInfo": "acquired package info from RPM DB",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:rpm/redhat/some-rpm@1.0"
+        }
+      ]
+    },
+    {
+      "name": "no-purl-package",
+      "versionInfo": "9.9",
+      "sourceInfo": "acquired package info from installed java archive: /opt/kafka/libs/no-purl-9.9.jar"
+    }
+  ]
+}

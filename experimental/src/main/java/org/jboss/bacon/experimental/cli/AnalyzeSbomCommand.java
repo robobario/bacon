@@ -1,0 +1,39 @@
+package org.jboss.bacon.experimental.cli;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+
+import org.jboss.bacon.experimental.impl.sbom.SbomAnalyzer;
+import org.jboss.bacon.experimental.impl.sbom.SbomModule;
+import org.jboss.pnc.bacon.common.ObjectHelper;
+import org.jboss.pnc.bacon.common.exception.FatalException;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import lombok.extern.slf4j.Slf4j;
+import picocli.CommandLine;
+
+@Slf4j
+@CommandLine.Command(
+        name = "analyze-sbom",
+        description = "Lists the maven modules contained in an SPDX SBOM along with their filesystem path")
+public class AnalyzeSbomCommand extends ExperimentalCommand {
+
+    @CommandLine.Parameters(description = "SPDX SBOM JSON file to analyze")
+    protected Path sbom;
+
+    @Override
+    public void run() {
+        if (sbom == null || !Files.isRegularFile(sbom)) {
+            throw new FatalException("SBOM file does not exist: " + sbom);
+        }
+        List<SbomModule> modules = new SbomAnalyzer().analyze(sbom);
+        log.info("Found {} maven modules in {}", modules.size(), sbom);
+        try {
+            ObjectHelper.print(getJsonOutput(), modules);
+        } catch (JsonProcessingException e) {
+            throw new FatalException("Unable to serialize analysis result", e);
+        }
+    }
+}
