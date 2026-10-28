@@ -9,6 +9,7 @@ import org.jboss.bacon.experimental.impl.sbom.DaAvailabilityResolver;
 import org.jboss.bacon.experimental.impl.sbom.GavMapper;
 import org.jboss.bacon.experimental.impl.sbom.PathFilter;
 import org.jboss.bacon.experimental.impl.sbom.SbomAnalysisConfig;
+import org.jboss.bacon.experimental.impl.sbom.SbomAnalysisResult;
 import org.jboss.bacon.experimental.impl.sbom.SbomAnalyzer;
 import org.jboss.bacon.experimental.impl.sbom.SbomModule;
 import org.jboss.pnc.bacon.common.ObjectHelper;
@@ -62,16 +63,16 @@ public class AnalyzeSbomCommand extends ExperimentalCommand {
         if (!skipDa) {
             new DaAvailabilityResolver().resolve(modules);
         }
-        write(modules);
+        write(new SbomAnalysisResult(modules));
     }
 
-    private void write(List<SbomModule> modules) {
+    private void write(SbomAnalysisResult result) {
         try {
             if (output == null) {
-                ObjectHelper.print(getJsonOutput(), modules);
+                ObjectHelper.print(getJsonOutput(), result);
             } else {
-                Files.writeString(output, ObjectHelper.serialize(getJsonOutput(), modules));
-                log.info("Wrote analysis of {} modules to {}", modules.size(), output);
+                Files.writeString(output, ObjectHelper.serialize(getJsonOutput(), result));
+                log.info("Wrote analysis of {} modules to {}", result.getModules().size(), output);
             }
         } catch (JsonProcessingException e) {
             throw new FatalException("Unable to serialize analysis result", e);
